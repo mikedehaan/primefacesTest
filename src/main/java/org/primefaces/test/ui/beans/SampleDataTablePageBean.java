@@ -50,6 +50,14 @@ public class SampleDataTablePageBean implements Serializable {
 
     public void submit() {
         // Read the model for the new values
+        LOGGER.debug("**************************************************************");
+        LOGGER.debug("** This printout is after validation.  Notice the data      **");
+        LOGGER.debug("** model was populated correctly.  I'm guessing that since  **");
+        LOGGER.debug("** the model gets populated here, that the values are       **");
+        LOGGER.debug("** stored somewhere during validation.  The question is how **");
+        LOGGER.debug("** do I gain access to them.                                **");
+        LOGGER.debug("**************************************************************");
+
         for (DataTableRow row : dataTableModel.getRows()) {
             for (DataTableCell column : row.getColumns()) {
                 System.out.print("\t" + column.getValue());
@@ -62,10 +70,13 @@ public class SampleDataTablePageBean implements Serializable {
     public void validate(ComponentSystemEvent event) {
         DataTable dataTable = (DataTable)event.getComponent();
 
-        LOGGER.debug("debug: inside validate");
-        LOGGER.info("debug: inside validate");
-
-
+        LOGGER.debug("**************************************************************");
+        LOGGER.debug("** I'm expecting one of the following values to have data   **");
+        LOGGER.debug("** See below for:                                           **");
+        LOGGER.debug("**     getLocalValue()                                      **");
+        LOGGER.debug("**     getSubmittedValue()                                  **");
+        LOGGER.debug("**     getValue()                                           **");
+        LOGGER.debug("**************************************************************");
         for (int r = 0; r < dataTable.getRowCount(); r++) {
             dataTable.setRowIndex(r);
 

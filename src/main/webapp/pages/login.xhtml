@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+Hello World!
+
+<h:form>
+
+<p:dataTable id="sampleDataTable" var="row" value="#{sampleDataTablePageBean.dataTableModel.rows}">
+    <f:event listener="#{sampleDataTablePageBean.validate}" type="postValidate"/>
+
+    <f:facet name="header">
+        Sample Data Table Test
+    </f:facet>
+
+    <p:columns value="#{sampleDataTablePageBean.dataTableModel.headers}" var="column" columnIndexVar="colIndex">
+        <f:facet name="header">
+            #{column}
+        </f:facet>
+
+        #{row.get(colIndex).value}
+        <p:inputText value="#{row.get(colIndex).value}"/>
+    </p:columns>
+</p:dataTable>
+
+<p:commandButton action="#{sampleDataTablePageBean.submit}"/>
+
+</h:form>
+</html>

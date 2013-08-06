@@ -1,8 +1,9 @@
 primefacesTest
 ==============
 
-Testing primefaces functionality
+Testing primefaces functionality.  This project is in reference to the primefaces forum entry:
 
+  http://forum.primefaces.org/viewtopic.php?f=3&t=33107
 
 1. Clone the repository
 

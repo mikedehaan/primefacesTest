@@ -6,7 +6,7 @@ Testing primefaces functionality
 
 1) Clone the repository
 
-  git clone git@github.com:mikedehaan/primefacesTest.git
+  git clone https://github.com/mikedehaan/primefacesTest.git
 
 2) Run maven to start tomcat7
 
